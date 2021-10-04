@@ -2,13 +2,16 @@ var express = require('express');
 var fileUpload = require('express-fileupload');
 var bodyParser = require('body-parser');
 var fs = require('fs');
+var ip = require("ip");
 
-var root = './files/';
-
-var server = 'http://192.168.1.73:5000'
+var root = __dirname + '/files/';
 
 const app = express();
 const port = 5000;
+
+var server = 'http://' + ip.address() + ':' + port;
+
+console.log(ip.address());
 
 app.use((req, res, next) => {
     res.setHeader('Content-Disposition', 'attachment');
