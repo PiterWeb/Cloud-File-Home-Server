@@ -1,9 +1,9 @@
 {
-  "name": "my-electron-app",
+  "name": "cloud-file-home",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +18,5 @@
     "nodemon": "^2.0.13",
     "read-metadata": "^1.0.0"
   },
-  "devDependencies": {
-    "electron": "^15.1.0"
-  }
+  "devDependencies": {}
 }

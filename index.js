@@ -11,8 +11,6 @@ const port = 5000;
 
 var server = 'http://' + ip.address() + ':' + port;
 
-console.log(ip.address());
-
 app.use((req, res, next) => {
     res.setHeader('Content-Disposition', 'attachment');
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -25,8 +23,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use(fileUpload());
-
-// app.use(cors({origin: 'http://192.168.1.65'}));
 
 app.use(express.static(root));
 
