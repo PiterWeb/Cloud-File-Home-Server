@@ -139,3 +139,19 @@ app.post('/api/files/:fileName/upload' , (req, res) => {
     });
 
 });
+
+app.post('/api/file/:fileName/delete' , (req, res) => {
+
+    var filePath = root + req.params.fileName;
+
+    fs.unlink(filePath , (err) => {
+        if (err) {
+            console.error(err);
+        } else {
+            console.log('Success');
+            res.json({status : 200});
+        }
+
+    });
+
+});
